@@ -28,6 +28,10 @@ export const lightTheme = {
     h2: { fontSize: '16px', fontWeight: 500 },
     h3: { fontSize: '16px', fontWeight: 400 },
     body: { fontSize: '16px', fontWeight: 400 }
+  },
+  shadows: {
+    md: '0px 2px 8px 0px #00000033',
+    sm: '0px 2px 4px 0px #00000033'
   }
 };
 
