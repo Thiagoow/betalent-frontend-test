@@ -3,7 +3,16 @@ import type { ApiService } from '@/services/api';
 import type { Employee } from '@/types/employee';
 import { filterEmployees } from '@/utils/filterEmployees';
 
-export function useEmployees(apiService: ApiService) {
+interface UseEmployeesTypes {
+  employees: Employee[];
+  filteredEmployees: Employee[];
+  isLoading: boolean;
+  error: string | null;
+  refetch: () => void;
+  handleSearch: (term: string) => void;
+}
+
+export function useEmployees(apiService: ApiService): UseEmployeesTypes {
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
