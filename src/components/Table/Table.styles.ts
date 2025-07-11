@@ -4,7 +4,6 @@ export const TableContainer = styled.div`
   background: ${({ theme }) => theme.colors.white};
   border-radius: ${({ theme }) => theme.spacing.little08};
   width: 100%;
-  overflow-x: auto;
 `;
 
 export const Table = styled.table`
@@ -68,7 +67,8 @@ export const TableCell = styled.td<{
   $alignCenter?: boolean;
 }>`
   padding: 8px ${({ theme }) => theme.spacing.regular16};
-  font-size: 0.9rem;
+  font-size: ${({ theme }) => theme.typography.h3.fontSize};
+  font-weight: ${({ theme }) => theme.typography.h3.fontWeight};
   color: ${({ theme }) => theme.colors.black};
   vertical-align: middle;
 
