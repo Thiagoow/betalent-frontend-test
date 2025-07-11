@@ -22,7 +22,7 @@ export function useEmployees(apiService: ApiService): UseEmployeesTypes {
     setIsLoading(true);
     setError(null);
     try {
-      const data = await apiService.fetchEmployees();
+      const data = await apiService.get<Employee[]>('/employees');
       setEmployees(data);
     } catch (error) {
       setError(error instanceof Error ? error.message : 'Unknown error');
