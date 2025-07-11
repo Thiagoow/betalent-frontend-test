@@ -4,6 +4,7 @@ export const TableContainer = styled.div`
   background: ${({ theme }) => theme.colors.white};
   border-radius: ${({ theme }) => theme.spacing.little08};
   width: 100%;
+  overflow-x: auto;
 `;
 
 export const Table = styled.table`
