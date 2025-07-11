@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { ApiService } from '@/services/api';
 import { useEmployees } from '@/hooks/useEmployee';
-import MainLayout from '@/components/layout';
+import MainLayout from '@/layouts/index';
 import EmployeeTable from '@/components/ui/Table';
 import SearchBar from '@/components/ui/SearchBar';
 
