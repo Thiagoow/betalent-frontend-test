@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import type { Employee } from '@/types/employee';
 import { formatDate, formatPhone } from '@/utils/formatters';
 import chevronIcon from '@/assets/icons/chevron.svg';
@@ -34,10 +34,21 @@ function EmployeeTable({ employees, isLoading }: EmployeeTableProps) {
     }
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && expandedRowId !== null) {
+        setExpandedRowId(null);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [expandedRowId]);
+
   if (isLoading) {
     return (
       <TableContainer>
-        <LoadingContainer>Loading employees...</LoadingContainer>
+        <LoadingContainer>Carregando funcionários...</LoadingContainer>
       </TableContainer>
     );
   }
