@@ -12,6 +12,7 @@ const LayoutContainer = styled.div`
 const ContentContainer = styled.main`
   flex: 1;
   width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: ${({ theme }) => theme.spacing.medium32};
 `;
