@@ -36,22 +36,21 @@ function EmployeeTable({ employees, isLoading, error }: EmployeeTableProps) {
   };
 
   useEffect(() => {
-    const handleResize = () => {
+    function handleResize() {
       if (window.innerWidth >= 890 && expandedRowId !== null) {
         setExpandedRowId(null);
       }
-    };
+    }
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [expandedRowId]);
 
   if (error || isLoading) {
+    const message = error ?? 'Carregando funcionários...';
     return (
       <TableContainer>
-        <MessageContainer>
-          {error || 'Carregando funcionários...'}
-        </MessageContainer>
+        <MessageContainer>{message}</MessageContainer>
       </TableContainer>
     );
   }
