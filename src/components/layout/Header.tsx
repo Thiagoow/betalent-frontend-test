@@ -18,10 +18,12 @@ const Logo = styled.img`
   height: 2.125rem;
 `;
 
-export const Header = () => {
+function Header() {
   return (
     <HeaderContainer>
       <Logo src={logo} alt="BeTalent Logo" />
     </HeaderContainer>
   );
-};
+}
+
+export default Header;

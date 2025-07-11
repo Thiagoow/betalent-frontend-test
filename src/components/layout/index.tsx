@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Header } from './Header';
+import Header from './Header';
 
 const LayoutContainer = styled.div`
   display: flex;
@@ -20,11 +20,13 @@ interface MainLayoutProps {
   children: React.ReactNode;
 }
 
-export const MainLayout = ({ children }: MainLayoutProps) => {
+function MainLayout({ children }: MainLayoutProps) {
   return (
     <LayoutContainer>
       <Header />
       <ContentContainer>{children}</ContentContainer>
     </LayoutContainer>
   );
-};
+}
+
+export default MainLayout;

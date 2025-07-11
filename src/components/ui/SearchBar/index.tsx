@@ -11,7 +11,7 @@ interface SearchBarProps {
   onSearch: (term: string) => void;
 }
 
-export function SearchBar({ onSearch }: SearchBarProps) {
+function SearchBar({ onSearch }: SearchBarProps) {
   return (
     <SearchBarContainer>
       <Title>Funcionários</Title>
