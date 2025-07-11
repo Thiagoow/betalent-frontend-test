@@ -16,7 +16,7 @@ import {
   ExpandedContent,
   ExpandedLabel,
   ExpandedValue,
-  LoadingContainer,
+  MessageContainer,
   Dot
 } from './Table.styles';
 
@@ -49,9 +49,9 @@ function EmployeeTable({ employees, isLoading, error }: EmployeeTableProps) {
   if (error || isLoading) {
     return (
       <TableContainer>
-        <LoadingContainer>
+        <MessageContainer>
           {error || 'Carregando funcionários...'}
-        </LoadingContainer>
+        </MessageContainer>
       </TableContainer>
     );
   }
@@ -72,60 +72,70 @@ function EmployeeTable({ employees, isLoading, error }: EmployeeTableProps) {
           </TableRow>
         </TableHeader>
         <tbody>
-          {employees.map((employee) => (
-            <Fragment key={employee.id}>
-              <TableRow
-                key={employee.id}
-                onClick={() => toggleRow(employee.id)}
-                $isClickable
-              >
-                <TableCell>
-                  <UserImage src={employee.image} alt={employee.name} />
-                </TableCell>
-                <TableCell>{employee.name}</TableCell>
-                <TableCell $hideOnMobile>{employee.job}</TableCell>
+          {employees.length === 0 ? (
+            <TableRow>
+              <TableCell colSpan={6}>
+                <MessageContainer>
+                  Nenhum funcionário encontrado
+                </MessageContainer>
+              </TableCell>
+            </TableRow>
+          ) : (
+            employees.map((employee) => (
+              <Fragment key={employee.id}>
+                <TableRow
+                  key={employee.id}
+                  onClick={() => toggleRow(employee.id)}
+                  $isClickable
+                >
+                  <TableCell>
+                    <UserImage src={employee.image} alt={employee.name} />
+                  </TableCell>
+                  <TableCell>{employee.name}</TableCell>
+                  <TableCell $hideOnMobile>{employee.job}</TableCell>
 
-                <TableCell $hideOnMobile>
-                  {formatDate(employee.admission_date)}
-                </TableCell>
-                <TableCell $hideOnMobile>
-                  {formatPhone(employee.phone)}
-                </TableCell>
+                  <TableCell $hideOnMobile>
+                    {formatDate(employee.admission_date)}
+                  </TableCell>
+                  <TableCell $hideOnMobile>
+                    {formatPhone(employee.phone)}
+                  </TableCell>
 
-                <TableCell $hideOnDesktop $alignCenter>
-                  <ChevronIcon
-                    src={chevronIcon}
-                    alt="Toggle row"
-                    $isExpanded={expandedRowId === employee.id}
-                  />
-                </TableCell>
-              </TableRow>
-              {expandedRowId === employee.id && (
-                <ExpandedRow>
-                  <ExpandedCell colSpan={6}>
-                    <ExpandedContent>
-                      <ExpandedLabel>Cargo</ExpandedLabel>
-                      <ExpandedValue>{employee.job}</ExpandedValue>
-                    </ExpandedContent>
+                  <TableCell $hideOnDesktop $alignCenter>
+                    <ChevronIcon
+                      src={chevronIcon}
+                      alt="Toggle row"
+                      $isExpanded={expandedRowId === employee.id}
+                    />
+                  </TableCell>
+                </TableRow>
+                {expandedRowId === employee.id && (
+                  <ExpandedRow>
+                    <ExpandedCell colSpan={6}>
+                      <ExpandedContent>
+                        <ExpandedLabel>Cargo</ExpandedLabel>
+                        <ExpandedValue>{employee.job}</ExpandedValue>
+                      </ExpandedContent>
 
-                    <ExpandedContent>
-                      <ExpandedLabel>Data de admissão</ExpandedLabel>
-                      <ExpandedValue>
-                        {formatDate(employee.admission_date)}
-                      </ExpandedValue>
-                    </ExpandedContent>
+                      <ExpandedContent>
+                        <ExpandedLabel>Data de admissão</ExpandedLabel>
+                        <ExpandedValue>
+                          {formatDate(employee.admission_date)}
+                        </ExpandedValue>
+                      </ExpandedContent>
 
-                    <ExpandedContent>
-                      <ExpandedLabel>Telefone</ExpandedLabel>
-                      <ExpandedValue>
-                        {formatPhone(employee.phone)}
-                      </ExpandedValue>
-                    </ExpandedContent>
-                  </ExpandedCell>
-                </ExpandedRow>
-              )}
-            </Fragment>
-          ))}
+                      <ExpandedContent>
+                        <ExpandedLabel>Telefone</ExpandedLabel>
+                        <ExpandedValue>
+                          {formatPhone(employee.phone)}
+                        </ExpandedValue>
+                      </ExpandedContent>
+                    </ExpandedCell>
+                  </ExpandedRow>
+                )}
+              </Fragment>
+            ))
+          )}
         </tbody>
       </Table>
     </TableContainer>

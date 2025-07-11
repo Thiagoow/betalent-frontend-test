@@ -169,7 +169,7 @@ export const ExpandedValue = styled.p`
   color: ${({ theme }) => theme.colors.black};
 `;
 
-export const LoadingContainer = styled.div`
+export const MessageContainer = styled.div`
   padding: ${({ theme }) => theme.spacing.medium40};
   text-align: center;
   font-size: ${({ theme }) => theme.typography.h2.fontSize};
