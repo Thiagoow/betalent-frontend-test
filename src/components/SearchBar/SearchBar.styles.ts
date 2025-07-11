@@ -17,10 +17,10 @@ export const Title = styled.h1`
 
 export const SearchInputContainer = styled.div`
   position: relative;
-  width: 260px;
+  width: 100%;
 
-  @media (max-width: 640px) {
-    width: 100%;
+  @media (min-width: 768px) {
+    width: 286px;
   }
 `;
 
