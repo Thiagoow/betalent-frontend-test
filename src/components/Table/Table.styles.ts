@@ -20,7 +20,7 @@ export const TableHeaderCell = styled.th<{
   $hideOnMobile?: boolean;
   $hideOnDesktop?: boolean;
 }>`
-  padding: ${({ theme }) => theme.spacing.regular16};
+  padding: 14px ${({ theme }) => theme.spacing.medium32};
   font-weight: ${({ theme }) => theme.typography.h2.fontWeight};
   font-size: ${({ theme }) => theme.typography.h2.fontSize};
   color: ${({ theme }) => theme.colors.white};
@@ -67,14 +67,14 @@ export const TableCell = styled.td<{
   $hideOnDesktop?: boolean;
   $alignCenter?: boolean;
 }>`
-  padding: 8px ${({ theme }) => theme.spacing.regular16};
+  padding: 8px ${({ theme }) => theme.spacing.medium32};
   font-size: ${({ theme }) => theme.typography.h3.fontSize};
   font-weight: ${({ theme }) => theme.typography.h3.fontWeight};
   color: ${({ theme }) => theme.colors.black};
   vertical-align: middle;
 
   @media (max-width: 767px) {
-    padding: 12px ${({ theme }) => theme.spacing.regular16};
+    padding: 12px ${({ theme }) => theme.spacing.medium32};
   }
 
   ${({ $alignCenter }) =>
@@ -139,7 +139,7 @@ export const ExpandedCell = styled.td`
 export const ExpandedContent = styled.div`
   position: relative;
   margin: ${({ theme }) => theme.spacing.regular16} auto;
-  padding: 0 ${({ theme }) => theme.spacing.regular20};
+  padding: 0 ${({ theme }) => theme.spacing.medium32};
   display: flex;
   justify-content: space-between;
 
