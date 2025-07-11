@@ -1,11 +1,13 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import type { ApiService } from '@/services/api';
 import type { Employee } from '@/types/employee';
+import { filterEmployees } from '@/utils/filterEmployees';
 
 export function useEmployees(apiService: ApiService) {
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const fetchEmployees = useCallback(async () => {
     setIsLoading(true);
@@ -26,10 +28,17 @@ export function useEmployees(apiService: ApiService) {
     fetchEmployees();
   }, [fetchEmployees]);
 
+  const filteredEmployees = useMemo(
+    () => filterEmployees(employees, searchTerm),
+    [employees, searchTerm]
+  );
+
   return {
     employees,
+    filteredEmployees,
     isLoading,
     error,
-    refetch: fetchEmployees
+    refetch: fetchEmployees,
+    handleSearch: setSearchTerm
   };
 }
