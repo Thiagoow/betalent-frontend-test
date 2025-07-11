@@ -4,7 +4,6 @@ export const SearchBarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: ${({ theme }) => theme.spacing.medium32};
   flex-wrap: wrap;
   gap: ${({ theme }) => theme.spacing.regular20};
 `;
