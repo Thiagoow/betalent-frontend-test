@@ -30,7 +30,7 @@ export const TableHeaderCell = styled.th<{
   ${({ $hideOnMobile }) =>
     $hideOnMobile &&
     css`
-      @media (max-width: 767px) {
+      @media (max-width: 889px) {
         display: none;
       }
     `}
@@ -38,7 +38,7 @@ export const TableHeaderCell = styled.th<{
   ${({ $hideOnDesktop }) =>
     $hideOnDesktop &&
     css`
-      @media (min-width: 768px) {
+      @media (min-width: 890px) {
         display: none;
       }
     `}
@@ -52,7 +52,7 @@ export const TableRow = styled.tr<{ $isClickable?: boolean }>`
   ${({ $isClickable }) =>
     $isClickable &&
     css`
-      @media (max-width: 767px) {
+      @media (max-width: 889px) {
         cursor: pointer;
 
         &:hover {
@@ -73,7 +73,7 @@ export const TableCell = styled.td<{
   color: ${({ theme }) => theme.colors.black};
   vertical-align: middle;
 
-  @media (max-width: 767px) {
+  @media (max-width: 889px) {
     padding: 12px ${({ theme }) => theme.spacing.medium32};
   }
 
@@ -86,7 +86,7 @@ export const TableCell = styled.td<{
   ${({ $hideOnMobile }) =>
     $hideOnMobile &&
     css`
-      @media (max-width: 767px) {
+      @media (max-width: 889px) {
         display: none;
       }
     `}
@@ -94,7 +94,7 @@ export const TableCell = styled.td<{
   ${({ $hideOnDesktop }) =>
     $hideOnDesktop &&
     css`
-      @media (min-width: 768px) {
+      @media (min-width: 890px) {
         display: none;
       }
     `}
@@ -114,7 +114,7 @@ export const ChevronIcon = styled.img<{ $isExpanded: boolean }>`
   transform: ${({ $isExpanded }) =>
     $isExpanded ? 'rotate(180deg)' : 'rotate(0deg)'};
 
-  @media (min-width: 768px) {
+  @media (min-width: 890px) {
     display: none;
   }
 `;

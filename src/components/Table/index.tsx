@@ -30,14 +30,14 @@ function EmployeeTable({ employees, isLoading, error }: EmployeeTableProps) {
   const [expandedRowId, setExpandedRowId] = useState<number | null>(null);
 
   const toggleRow = (id: number) => {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 890) {
       setExpandedRowId((prevId) => (prevId === id ? null : id));
     }
   };
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768 && expandedRowId !== null) {
+      if (window.innerWidth >= 890 && expandedRowId !== null) {
         setExpandedRowId(null);
       }
     };
