@@ -1,16 +1,19 @@
-import { MainLayout } from '@/components/layout';
-import { useEmployees } from '@/hooks/useEmployee';
-import { ApiService } from '@/services/api';
 import { useMemo } from 'react';
+import { ApiService } from '@/services/api';
+import { useEmployees } from '@/hooks/useEmployee';
+import MainLayout from '@/components/layout';
+import EmployeeTable from '@/components/ui/Table';
+import SearchBar from '@/components/ui/SearchBar';
 
 export default function HomePage() {
   const apiService = useMemo(() => new ApiService(), []);
-  const { employees } = useEmployees(apiService);
-  console.table(employees);
+  const { handleSearch, filteredEmployees, isLoading } =
+    useEmployees(apiService);
 
   return (
     <MainLayout>
-      <h1>Home Page</h1>
+      <SearchBar onSearch={(term) => handleSearch(term)} />
+      <EmployeeTable employees={filteredEmployees} isLoading={isLoading} />
     </MainLayout>
   );
 }
