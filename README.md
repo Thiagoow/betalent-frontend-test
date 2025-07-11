@@ -19,16 +19,26 @@ Para o teste prático da vaga de Front End da empresa <a href="https://betalent.
 - Modularidade e princípio de responsabilidade única
 - Estilização consistente via tokens
 
-## 🚀 Demo: https://betalent-frontend-test.vercel.app
+### Demo: https://betalent-frontend-test.vercel.app
 
-<p> Instalar o projeto localmente: </p>
+## 🚀 Instruções do projeto
 
-```
-yarn install
-```
+```bash
+# Instalar dependências:
+$ yarn install
 
-<p> Iniciar server & client simultaneamente: </p>
+# Criar arquivo ".env" na pasta raiz com base no ".env.example"
 
-```
-yarn start
+# Iniciar apenas client:
+$ yarn dev
+
+# Iniciar apenas json-server:
+$ yarn server
+
+# Iniciar server & client simultaneamente:
+$ yarn start
+
+# Fazer o build pra produção e executar o servidor:
+$ yarn build
+$ yarn preview
 ```
