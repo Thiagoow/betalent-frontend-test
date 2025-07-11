@@ -81,12 +81,14 @@ function EmployeeTable({ employees, isLoading }: EmployeeTableProps) {
                 </TableCell>
                 <TableCell>{employee.name}</TableCell>
                 <TableCell $hideOnMobile>{employee.job}</TableCell>
+
                 <TableCell $hideOnMobile>
                   {formatDate(employee.admission_date)}
                 </TableCell>
                 <TableCell $hideOnMobile>
                   {formatPhone(employee.phone)}
                 </TableCell>
+
                 <TableCell $hideOnDesktop $alignCenter>
                   <ChevronIcon
                     src={chevronIcon}
@@ -105,7 +107,6 @@ function EmployeeTable({ employees, isLoading }: EmployeeTableProps) {
 
                     <ExpandedContent>
                       <ExpandedLabel>Data de admissão</ExpandedLabel>
-
                       <ExpandedValue>
                         {formatDate(employee.admission_date)}
                       </ExpandedValue>
@@ -113,7 +114,6 @@ function EmployeeTable({ employees, isLoading }: EmployeeTableProps) {
 
                     <ExpandedContent>
                       <ExpandedLabel>Telefone</ExpandedLabel>
-
                       <ExpandedValue>
                         {formatPhone(employee.phone)}
                       </ExpandedValue>
