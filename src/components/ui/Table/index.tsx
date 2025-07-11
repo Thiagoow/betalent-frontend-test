@@ -23,9 +23,10 @@ import {
 interface EmployeeTableProps {
   employees: Employee[];
   isLoading?: boolean;
+  error?: string | null;
 }
 
-function EmployeeTable({ employees, isLoading }: EmployeeTableProps) {
+function EmployeeTable({ employees, isLoading, error }: EmployeeTableProps) {
   const [expandedRowId, setExpandedRowId] = useState<number | null>(null);
 
   const toggleRow = (id: number) => {
@@ -45,10 +46,12 @@ function EmployeeTable({ employees, isLoading }: EmployeeTableProps) {
     return () => window.removeEventListener('resize', handleResize);
   }, [expandedRowId]);
 
-  if (isLoading) {
+  if (error || isLoading) {
     return (
       <TableContainer>
-        <LoadingContainer>Carregando funcionários...</LoadingContainer>
+        <LoadingContainer>
+          {error || 'Carregando funcionários...'}
+        </LoadingContainer>
       </TableContainer>
     );
   }

@@ -7,13 +7,18 @@ import SearchBar from '@/components/ui/SearchBar';
 
 export default function HomePage() {
   const apiService = useMemo(() => new ApiService(), []);
-  const { handleSearch, filteredEmployees, isLoading } =
+  const { handleSearch, filteredEmployees, isLoading, error } =
     useEmployees(apiService);
 
   return (
     <MainLayout>
       <SearchBar onSearch={(term) => handleSearch(term)} />
-      <EmployeeTable employees={filteredEmployees} isLoading={isLoading} />
+
+      <EmployeeTable
+        employees={filteredEmployees}
+        isLoading={isLoading}
+        error={error}
+      />
     </MainLayout>
   );
 }
