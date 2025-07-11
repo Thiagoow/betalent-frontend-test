@@ -1,7 +1,7 @@
 # Employees Table - React + TypeScript 🚀
 
 <p> Projeto desenvolvido por: <a href="https://github.com/thiagoow" target="_blank">Thiago Silva Lopes</a>, em Julho de 2025. <br/>
-Utilizando o bundler Vite e estilizando com styled-components. </p>
+Para o teste prático da vaga de Front End da empresa <a href="https://betalent.tech" target="_blank">BeTalent / BeMobile</a>. </p>
 
 ## ✅ Requisitos do projeto
 
