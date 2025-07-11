@@ -1,69 +1,34 @@
-# React + TypeScript + Vite
+# Employees Table - React + TypeScript 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p> Projeto desenvolvido por: <a href="https://github.com/thiagoow" target="_blank">Thiago Silva Lopes</a>, em Julho de 2025. <br/>
+Utilizando o bundler Vite e estilizando com styled-components. </p>
 
-Currently, two official plugins are available:
+## ✅ Requisitos do projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Funcionalidades Obrigatórias**
 
-## Expanding the ESLint configuration
+- Tabela com colunas: imagem, nome, cargo, admissão e telefone
+- Filtro combinado (nome/cargo/telefone)
+- Formatação de datas e telefones no client-side
+- Design responsivo (mobile/desktop): [Figma link](https://figma.com/file/yw6th52zE9bubewc6ayTg5/Teste-T%C3%A9cnico-Front-End-Be)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. **Diferenciais Aplicados ✨**
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- TypeScript com tipagem forte
+- Mínimo de dependências externas
+- Modularidade e princípio de responsabilidade única
+- Estilização consistente via tokens
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🚀 Demo: https://betalent-frontend-test.vercel.app
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+<p> Instalar o projeto localmente: </p>
+
+```
+yarn install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+<p> Iniciar server & client simultaneamente: </p>
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+yarn start
 ```
