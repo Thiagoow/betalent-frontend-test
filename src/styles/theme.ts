@@ -31,7 +31,7 @@ export const lightTheme = {
   },
   shadows: {
     md: '0px 2px 8px 0px #00000033',
-    sm: '0px 2px 4px 0px #00000033'
+    sm: '0px 1px 2px 0px #00000033'
   }
 };
 
